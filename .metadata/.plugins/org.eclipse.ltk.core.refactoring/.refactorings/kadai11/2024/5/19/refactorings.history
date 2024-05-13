@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;kadai12/src&apos;&#x0D;&#x0A;- Original project: &apos;kadai11&apos;&#x0D;&#x0A;- Destination element: &apos;kadai12/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     kadai11_1.Character_hero.java&#x0D;&#x0A;     kadai11_1.Character_monster.java&#x0D;&#x0A;     kadai11_1.Magician.java&#x0D;&#x0A;     kadai11_1.Monster.java&#x0D;&#x0A;     kadai11_1.Hero.java" description="Copy compilation units" destination="=kadai12/src" element1="/src&lt;kadai11_1{Character_hero.java" element2="/src&lt;kadai11_1{Character_monster.java" element3="/src&lt;kadai11_1{Magician.java" element4="/src&lt;kadai11_1{Monster.java" element5="/src&lt;kadai11_1{Hero.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1714972712843" units="5" version="1.0"/>
+</session>

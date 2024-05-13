@@ -1,0 +1,8 @@
+package kadai10_3;
+
+public class SuperMonster extends Monster {
+	
+	public SuperMonster(String name, int hp, int at, int df) {
+		super(name, hp, at, df);
+	}
+}

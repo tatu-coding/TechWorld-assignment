@@ -1,0 +1,21 @@
+package kadai12;
+
+public class SuperHero extends Character {
+	public SuperHero(String name, int hp, int at, int df) {
+		setName(name);
+		setHp(hp);
+		setAt(at);
+		setDf(df);
+	}
+	
+	public void attack(Character target) {
+		int damage = Math.max(this.getAt() - target.getDf(), 0);
+		target.setHp(target.getHp() - damage);
+		System.out.println(this.getName() + "が" + target.getName() + "に" + damage + "のダメージを与えた!");
+	}
+	
+	public void doubleattack(Character target) {
+		attack(target);
+		attack(target);
+	}
+}

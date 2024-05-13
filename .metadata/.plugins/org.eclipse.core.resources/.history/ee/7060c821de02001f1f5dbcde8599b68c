@@ -1,0 +1,10 @@
+package kadai10_3;
+
+public class SuperMonster {
+	
+	public SuperHero(String name, int hp, int at, int df) {
+		super(name, hp, at, df);
+	}
+
+
+}

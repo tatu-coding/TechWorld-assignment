@@ -1,0 +1,89 @@
+package kadai10_3;
+
+import java.util.Scanner;
+
+import kadai10_3.Hero;
+import kadai10_3.Magician;
+import kadai10_3.Monster;
+
+public class Story {
+
+	
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		//魔法使いを設定
+		Magician ma1 = new Magician("ケンユウ", 100, 80, 40, 40);
+		SuperMagician sma1 = new SuperMagician("sケンユウ", 100, 80, 40, 40);
+		
+		//勇者を設定
+		Hero h1 = new Hero("ユウキ", 100, 80, 40);
+		SuperHero sh1 = new SuperHero("sユウキ", 100, 80, 40);
+				
+		//怪物を設定
+		Monster m1 = new Monster("ノジリ", 100, 80, 40);
+		
+			printMagicianInfo(ma1);
+			printSuperMagicianInfo(sma1);
+			
+			printHeroInfo(h1);
+			printSuperHeroInfo(sh1);
+			
+			printMonsterInfo(m1);
+			printSuperMonsterInfo(sm1);
+			
+			//SuperHeroの攻撃
+			sh1.doubleattack(m1);
+			
+			scan.close();
+	}
+	
+	public static void printMagicianInfo(Magician ma) {
+		System.out.println("魔法使いが誕生した");
+		System.out.println("名前:" + ma.getName());
+		System.out.println("体力:" + ma.getHp());
+		System.out.println("攻撃力:" + ma.getAt());
+		System.out.println("防御力:" + ma.getDf());
+		System.out.println("魔力:" + ma.getMp());
+		System.out.println();
+	}
+	
+	public static void printSuperMagicianInfo(Magician sma) {
+		System.out.println("魔法使いが誕生した");
+		System.out.println("名前:" + sma.getName());
+		System.out.println("体力:" + sma.getHp());
+		System.out.println("攻撃力:" + sma.getAt());
+		System.out.println("防御力:" + sma.getDf());
+		System.out.println("魔力:" + sma.getMp());
+		System.out.println();
+	}
+	
+	public static void printHeroInfo(Hero h) {
+		System.out.println("勇者が誕生した");
+		System.out.println("名前:" + h.getName());
+		System.out.println("体力:" + h.getHp());
+		System.out.println("攻撃力:" + h.getAt());
+		System.out.println("防御力:" + h.getDf());
+		System.out.println();
+	}
+	
+	public static void printSuperHeroInfo(Hero sh) {
+		System.out.println("勇者が誕生した");
+		System.out.println("名前:" + sh.getName());
+		System.out.println("体力:" + sh.getHp());
+		System.out.println("攻撃力:" + sh.getAt());
+		System.out.println("防御力:" + sh.getDf());
+		System.out.println();
+	}
+	
+	public static void printMonsterInfo(Monster m) {
+		System.out.println("怪物が誕生した");
+		System.out.println("名前:" + m.getName());
+		System.out.println("体力:" + m.getHp());
+		System.out.println("攻撃力:" + m.getAt());
+		System.out.println("防御力:" + m.getDf());
+		System.out.println();
+	}
+	
+}

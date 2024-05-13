@@ -1,0 +1,14 @@
+package kadai10_3;
+
+public class SuperMagician extends Magician {
+	
+	public SuperMagician(String name, int hp, int at, int df, int mp) {
+		super(name, hp, at, df, mp);
+	}
+
+	public void doubleattack(Hero target) {
+		attack(target);
+		attack(target);
+	}
+
+}

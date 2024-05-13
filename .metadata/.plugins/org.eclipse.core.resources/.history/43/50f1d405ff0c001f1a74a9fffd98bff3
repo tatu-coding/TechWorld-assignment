@@ -1,0 +1,92 @@
+package kadai12;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Story {
+	private static final Random random = new Random();
+	private static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		//勇者チーム
+		List<Character> heroTeam = new ArrayList<>();
+		heroTeam.add(new SuperHero("s勇者", 60, 20, 10));
+		heroTeam.add(new SuperMagician("s魔法使い", 50, 12, 8, 20));
+		
+		//モンスターチーム
+		List<Character> monsterTeam = new ArrayList<>();
+		monsterTeam.add(new SuperMonster("sゴブリン", 200, 20, 10, 20, 4));
+		
+		battle(heroTeam, monsterTeam);
+		
+		scan.close();
+	}
+	
+	private static void battle(List<Character> heroTeam, List<Character> monsterTeam) {
+		int turn = 1;
+		while (!heroTeam.isEmpty() && !monsterTeam.isEmpty()) {
+			System.out.println("ターン" + turn + ":勇者チームの攻撃");
+			attackHeroesToMonsters(heroTeam, monsterTeam);
+			
+			if (!monsterTeam.isEmpty()) {
+				System.out.println();
+				System.out.println("ターン" + turn + ":モンスターチームの攻撃");
+				attackMonstersToHeroes(monsterTeam, heroTeam);
+			}
+			
+			turn++;
+			System.out.println();
+		}
+		
+		if (heroTeam.isEmpty()) {
+			System.out.println("モンスターチームの勝利");
+		} else {
+			System.out.println("勇者チームの勝利");
+		}
+	}
+	
+	private static void attackHeroesToMonsters(List<Character> heroTeam, List<Character> monsterTeam) {
+		for (Character hero : new ArrayList<>(heroTeam)) {
+			if (monsterTeam.isEmpty()) break;
+			Character target = monsterTeam.get(random.nextInt(monsterTeam.size()));
+			
+			if (hero instanceof SuperMagician) {
+				SuperMagician supermagician = (SuperMagician) hero;
+				if (random.nextBoolean() && supermagician.getMp() >= 20) {
+					supermagician.superMagicAttack(target);
+				} else {
+					supermagician.attack(target);
+				}
+			} else if(hero instanceof SuperHero) {
+				SuperHero superhero = (SuperHero) hero;
+				superhero.doubleAttack(target);
+			}
+			
+			if (target.getHp() <= 0) {
+				System.out.println(target.getName() + "が倒れた!");
+				monsterTeam.remove(target);
+			}	
+		}
+	}
+	
+	private static void attackMonstersToHeroes(List<Character> monsterTeam, List<Character> heroTeam) {
+		for (Character monster : new ArrayList<>(monsterTeam)) {
+			if (heroTeam.isEmpty()) break;
+			Character target = heroTeam.get(random.nextInt(heroTeam.size()));
+			
+			if (monster instanceof SuperMonster) {
+				SuperMonster supermonster = (SuperMonster) monster;
+				supermonster.attack(target);
+			}
+			
+			if (target.getHp() <= 0) {
+				System.out.println(target.getName() + "が倒れた!");
+				heroTeam.remove(target);
+			}
+		}
+	}
+}
+
+

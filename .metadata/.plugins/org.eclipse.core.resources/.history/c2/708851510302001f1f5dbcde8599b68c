@@ -1,0 +1,6 @@
+package kadai10_3;
+
+public class SuperHero extends Hero{
+
+	public void
+}
