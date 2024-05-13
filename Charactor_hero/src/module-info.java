@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Charactor_hero {
-}
